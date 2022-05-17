@@ -2,14 +2,6 @@
 
 In this project, I am going to implement instruments to compute prices for path-dependent options and accelerate the whole process using GPU parallel computing. For the ease to extend the functionalities of this instrument, I design the code in terms of how Monte Carlo model interacts with specific options, as well as how GPU codes can get involved into Monte Carlo model.
 
-# 0. Some important issues
-
-* PDF version of this documentation is for record only. Please refer to `.html` file of this report, otherwise you cannot watch the demo video inside this report. Please open the report as where it is and do not remove it, since it contains links in relative path to images and pictures.
-
-* The Java codes in theory runs on every Windows local machine with GPU, but it can fail due to environmental reasons. Refer to section 4 deployment of this report for further information.
-
-* This web application doesn't require a file as input and it doesn't return a file as output. Its input is essentially the parameter user key in on the webpage and the output will show on the webpage in seconds. That being said, I instruct Java to collect those data that can be deemed as input and output data and write them into the disks. Such file is for the purpose of assignment submission on brightspace only and they are only samples. A normal web application doesn't need such files.
-
 # 1. Theories
 
 Stock price follows the process: $S(t)=S(0)\ e^{(r-\sigma^2/2)t+\sigma\ W_Q\ (t)}$, which can be further written as: $S(t_k)=S(t_{k-1})e^{\left(r-\frac{\sigma^2}{2}\right)(t_k-t_{k-1})+\sigma\sqrt{t_k-t_{k-1}}Z_k}$, where $Z_1$,$\ \ldots$,$\ Z_m$ are independent and identically distributed random variables with distribution N(0,1).
