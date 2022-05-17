@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Path-dependent Option Pricer</title>
+</head>
+<body>
+<div class="nk-container">
+    <header class="bg-dark sticky-top">
+        Calculate prices for Path-dependent Options
+    </header>
+
+    <div class="main">
+        <div class="container pl-5 pr-5 pt-3 pb-3 mt-3">
+            <form class="form-inline mt-3" method="post" th:action="@{/path-dependent/calculator/exec}">
+                    <pre>
+
+Number of simulations:      <input type="number" id="nSim" name="nSim" step="any" placeholder="" th:value="${nSimV}" required>
+
+Time to expiration in year: <input type="number" id="T" name="T" step="any" placeholder="" th:value="${TV}" required>
+
+Number of time steps:       <input type="number" id="m" name="m" step="any" placeholder="" th:value="${mV}" required>
+
+S0:                         <input type="number" id="S0" name="S0" step="any" placeholder="" th:value="${S0V}" required>
+
+Volatility:                 <input type="number" id="sigma" name="sigma" step="any" th:value="${sigmaV}" placeholder="" required>
+
+Interest rate:              <input type="number" id="r" name="r" step="any" th:value="${rV}" placeholder="" required>
+
+Strike:                     <input type="number" id="K" name="K" step="any" th:value="${KV}" placeholder="" required>
+
+<button type="submit" class="btn btn-primary ml-3">Calculate</button>                   Execution time: <label id="exeTime" name="exeTime" th:text="${exeTimeV}" >0</label>s
+                    </pre>
+            </form>
+            <pre>
+Fixed Look back call:       <input type="number" th:value="${lookBackCallV}">
+Fixed Look back put:        <input type="number" th:value="${lookBackPutV}">
+Arithmetic Asian call:      <input type="number" th:value="${asianCallV}">
+Arithmetic Asian put:       <input type="number" th:value="${asianPutV}">
+            </pre>
+        </div>
+    </div>
+
+    <footer class="bg-dark">
+    </footer>
+</div>
+
+<script src="https://s3.pstatp.com/cdn/expire-1-M/jquery/3.3.1/jquery.min.js" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" crossorigin="anonymous"></script>
+</body>
+</html>
