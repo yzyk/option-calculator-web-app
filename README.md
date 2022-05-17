@@ -343,7 +343,7 @@ To use this functionality:
 
 See the video below for an overview of process and results.
 
-![](https://github.com/yzyk/option-calculator-web-app/img/calculator.gif)
+![](https://github.com/yzyk/option-calculator-web-app/blob/main/img/calculator.gif)
 
 # 3.2 Path-dependent option data pipeline
 
@@ -363,7 +363,7 @@ See the video below for an overview of process and results.
 
 Be advised, it takes several extra seconds here because we have files to write on the disk. If disable the write file to disk function, then it should be much faster.
 
-![](https://github.com/yzyk/option-calculator-web-app/img/data-pipeline.gif)
+![](https://github.com/yzyk/option-calculator-web-app/blob/main/img/data-pipeline.gif)
 
 # 3.3 Performance analysis
 
